@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/prayer_time_container"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="24dp">
+
+    <TextView
+        android:id="@+id/text_view_prayer_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="3"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        tools:text="Fajr" />
+
+    <TextView
+        android:id="@+id/text_view_prayer_time"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="end"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        tools:text="07:00" />
+
+</LinearLayout>

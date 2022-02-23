@@ -25,7 +25,7 @@ class NotificationHelper( private val context: Context) {
         val resultPendingIntent = PendingIntent.getActivity(context, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT)
 
         val mBuilder = NotificationCompat.Builder(context, NOTIFICATION_CHANNEL_ID).apply {
-            setSmallIcon(R.mipmap.ic_launcher)
+            setSmallIcon(R.drawable.ic_notification)
             setContentTitle("Настало время намаза ${prayerTitle}")
             setContentText(prayerTime)
             setAutoCancel(false)

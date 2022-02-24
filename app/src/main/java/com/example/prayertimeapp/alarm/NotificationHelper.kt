@@ -18,7 +18,6 @@ class NotificationHelper( private val context: Context) {
 
     fun createNotification(prayerTitle:String, prayerTime: String) {
 
-        println("menii createNotification $prayerTitle $prayerTime")
         val intent = Intent(context, MainActivity::class.java)
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
 
@@ -28,7 +27,7 @@ class NotificationHelper( private val context: Context) {
             setSmallIcon(R.drawable.ic_notification)
             setContentTitle("Настало время намаза ${prayerTitle}")
             setContentText(prayerTime)
-            setAutoCancel(false)
+            setAutoCancel(true)
             setSound(Settings.System.DEFAULT_ALARM_ALERT_URI)
             setContentIntent(resultPendingIntent)
         }

@@ -13,10 +13,10 @@ data class Prayer(val title: String, val time: String) {
             set(Calendar.MINUTE, getMinutes())
             set(Calendar.SECOND, 0)
         }
+
         if (calendar.time.compareTo(Date()) < 0)
             calendar.add(Calendar.DAY_OF_MONTH, 1)
 
-        println("menii $title ${calendar.get(Calendar.HOUR_OF_DAY)} ${calendar.get(Calendar.MINUTE)}")
         return calendar.timeInMillis
     }
 }

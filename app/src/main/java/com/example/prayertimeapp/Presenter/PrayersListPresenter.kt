@@ -50,16 +50,17 @@ class PrayersListPresenter @Inject constructor(
 
     private fun test() {
         val prayersTime = listOf(
-            Prayer("fajr", "9:3"),
-            Prayer("shuruq", "9:4"),
-            Prayer("zuhr", "9:5"),
-            Prayer("asr", "9:6"),
-            Prayer("maghrib", "9:7"),
-            Prayer("isha", "9:8"))
+            Prayer("Фаджр", "07:15"),
+            Prayer("Шурук", "08:40"),
+            Prayer("Зухр", "12:31"),
+            Prayer("Аср", "15:55"),
+            Prayer("Магриб", "18:01"),
+            Prayer("Иша", "20:05"))
         prayersListView.hideProgressBar()
         prayersListView.showPrayersTime(prayersTime)
         val currentPrayer = getCurrentPrayer(prayersTime)
         prayersListView.highlightCurrentPrayer(currentPrayer)
+        changeImage(currentPrayer)
         setAlarms(prayersTime)
     }
 
@@ -69,14 +70,12 @@ class PrayersListPresenter @Inject constructor(
         val alarmManager: AlarmManager = context.getSystemService(Context.ALARM_SERVICE) as AlarmManager
 
         prayersTime.forEach { prayer ->
-            println("menii request code for ${prayer.title} is ${prayer.getHours()}")
             intent = Intent(context, NotificationReceiver::class.java).apply {
                 putExtra(PRAYER_TITLE_EXTRA, prayer.title)
                 putExtra(PRAYER_TIME_EXTRA, prayer.time)
             }
             pendingIntent = PendingIntent.getBroadcast(context, prayer.getHours(), intent, 0)
             alarmManager.setExact(AlarmManager.RTC_WAKEUP, prayer.getCalendarTimeInMillis(), pendingIntent)
-            //alarmManager.setRepeating(AlarmManager.RTC_WAKEUP, prayer.getCalendarTimeInMillis(), AlarmManager.INTERVAL_DAY, pendingIntent)
         }
     }
 
@@ -93,7 +92,7 @@ class PrayersListPresenter @Inject constructor(
 
     private fun getCurrentPrayer(prayersTime: List<Prayer>): Int {
         val zoneId = ZoneId.of("Europe/Moscow")
-        val currentTime = LocalTime.now(zoneId)//.plusHours(3)
+        val currentTime = LocalTime.now(zoneId)//.minusHours(3) // minus for emulator
         for (i in 0 until 6) {
             if (LocalTime.of(prayersTime[i].getHours(), prayersTime[i].getMinutes()).isAfter(currentTime)) {
                 if (i == 0)

@@ -6,7 +6,7 @@ This is an android app which shows and notifies user about islamic prayers time 
 
 Start page            |  Notification when prayer time comes | Clicking on notification
 :-------------------------:|:-------------------------:|:-------------------------:
-<img width="281" alt="1" src="https://user-images.githubusercontent.com/52213479/155285359-e5216c29-d6c3-41ed-952e-8277788b51c1.png">  |  <img width="280" alt="2" src="https://user-images.githubusercontent.com/52213479/155285381-1a01d707-d815-4692-b9e9-ce89aebb7ef8.png"> | <img width="281" alt="4" src="https://user-images.githubusercontent.com/52213479/155285405-e3d9ef22-c379-4db9-bdde-779e67cf70d0.png"> 
+<img width="290" alt="1" src="https://user-images.githubusercontent.com/52213479/155491389-9cadcb0c-63f0-47cc-8bdc-69d646ebc2b1.png">  |  <img width="276" alt="2" src="https://user-images.githubusercontent.com/52213479/155490920-cb5ef453-ed5a-494f-916d-8b20ac8caf7b.png"> | <img width="290" alt="3" src="https://user-images.githubusercontent.com/52213479/155491534-84192c86-65ec-4f9d-b842-e59fdb752503.png">
 
 # App logic overview
 
